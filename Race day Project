@@ -1,0 +1,21 @@
+// This program will decide the number of the racer and at what time they will run based on their age and weather they registered early or not.
+let raceNumber = Math.floor(Math.random() * 1000);
+let earlyRegistration = true;
+let runnerAge = 19;
+// If the runner is over 18 years old and have an early registration, his race number will always be at or above 1000.
+  if (runnerAge > 18 && earlyRegistration){
+  raceNumber += 1000;
+}
+// The runner who is over 18 and have an early registration will also always run at 9:30 am.
+  if (runnerAge > 18 && earlyRegistration){
+    console.log(`Welcome racer number ${raceNumber}. You will run at 9:30 am. Good Luck!`);
+// The runner who is over 18 but haven't registered early will always run at 11:00 am. Their race number will also always be under 1000.
+  } else if (runnerAge > 18 && !earlyRegistration){
+    console.log(`Welcome racer number ${raceNumber}. You will run at 11:00 am. Good Luck!`);
+// The runner who is NOT over 18 will run at 12:30 pm and will have an race number under 1000.
+  } else if (runnerAge < 18){
+    console.log(`Welcome racer number ${raceNumber}. You will run at 12:30 pm. Good Luck!`);
+  } else {
+// The runner who is exactly 18 years old will need to talk to the supervisor in the registration desk.
+    console.log(`Welcome runner. Your age is not specified, please check the registration desk for more information. Thank you!`)
+  }
