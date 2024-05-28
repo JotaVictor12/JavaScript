@@ -1,0 +1,16 @@
+//This code is going to convert my age to "dog´s age".
+let myAge = 21;
+// The first two years of a dog´s life count as 10.5  dog years each.
+let earlyYears = 2;
+earlyYears *= 10.5;
+// Now that we've already accounted for the first two years, we can subtract 2 from myAge and finish the math from there.
+let laterYears = myAge - 2;
+laterYears *= 4;
+// Just checking the results
+console.log(`Early Years: ${earlyYears}, Later Years: ${laterYears}`);
+// Adding earlyYears and laterYears to get my age in dog years.
+let myAgeInDogYears = earlyYears + laterYears;
+// Using a built-in method to return my name with all lowercase letters.
+let myName = 'Joao Victor'.toLowerCase();
+// Using interpolation to log out my results.
+console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`);
