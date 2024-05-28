@@ -1,0 +1,16 @@
+// this variable is const bc it's going to remain constant.
+const kelvin = 293;
+// celsius is similar to kelvin. to convert kelvin to celsius we just need to subtract 273 from kelvin variable.
+const celsius = kelvin - 273;
+// now we're converting celsius to fahrenheit.
+let fahrenheit = celsius * (9/5) + 32;
+// usually when you convert from celsius to fahrenheit you get a decimal number. we're using .floor to round down this number.
+fahrenheit = Math.floor(fahrenheit); 
+// converting celsius to newton.
+let newton = celsius * (33/100);
+// rounding down the newton value.
+newton = Math.floor(newton);
+// using interpolation to log our results.
+console.log('When the temperature is ' + kelvin + ' Kelvin, we have ' + celsius + ' degrees Celsius, ' + fahrenheit + ' degrees Fahrenheit and ' + newton + ' Newton.');
+// using template literal to interpolate strings. Just a easier way to do that.
+console.log(`When the temperature is ${kelvin} Kelvin, we have ${celsius} degrees Celsius, ${fahrenheit} degrees Fahrenheit and ${newton} Newton.`);
