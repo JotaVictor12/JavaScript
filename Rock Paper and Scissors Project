@@ -1,0 +1,60 @@
+console.log('Hello! Are you ready to play some rock, paper and scissors?');
+// This block is making sure that it doesn't matter if the user digits 'Rock' or 'rock', the result will always be Lowercase. It also specifies all the user possible choices and prints an error message in case of a unespecified answer.
+const getUserChoice = (userInput) => {
+  userInput = userInput.toLowerCase();
+if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb'){
+  return userInput;
+} else {
+  console.log('ERROR. Invalid Input.');
+}
+}
+// This block is responsible for getting a random answer from the computer.
+let getComputerChoice = () => {
+  let rand = Math.floor(Math.random() * 3);
+  if(rand === 0){
+    return 'rock';
+  } else if(rand === 1){
+    return 'paper';
+  } else  {
+    return 'scissors';
+  }
+}
+// This block is simply determining the winner. it gets both user and computer answers and compare them, returning who won or if it was a tie.
+let determineWinner = (userChoice, computerChoice) => {
+  if(userChoice === computerChoice){
+    return 'It was a tie!';
+  }
+  if(userChoice === 'rock'){
+    if(computerChoice === 'paper'){
+      return 'The computer won!';
+    } else {
+      return 'You won!';
+    }
+  }
+  if(userChoice === 'paper'){
+    if(computerChoice === 'scissors'){
+      return 'The computer won!';
+    } else {
+      return 'You won!';
+    }
+  }
+  if(userChoice === 'scissors'){
+    if(computerChoice === 'rock'){
+      return 'The computer won!';
+    } else {
+      return 'You won!';
+    }
+  }
+  if(userChoice === 'bomb'){
+    return 'You won!'
+  }
+}
+// This block is the game itself. It prints both answers and the winner!
+let playGame = () => {
+  let userChoice = getUserChoice('rock');
+  let computerChoice = getComputerChoice();
+  console.log('You threw: ' + userChoice);
+  console.log('The computer threw: ' + computerChoice);
+  console.log('The result is: ' + determineWinner(userChoice, computerChoice));
+}
+playGame();
