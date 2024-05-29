@@ -1,0 +1,54 @@
+// This block gets the number of hours the user has slept per day.
+const getSleepHours = (day) => {
+  if(day === 'monday'){
+    return 8;
+  } else if(day === 'tuesday'){
+      return 7;
+  } else if(day === 'wednesday'){
+      return 6;
+  } else if(day === 'thursday'){
+      return 15;
+  } else if(day === 'friday'){
+      return 10;
+  } else if(day === 'saturday'){
+      return 8;
+  } else if(day === 'sunday'){
+      return 8
+  } else {
+      return 'Invalid answer!';
+  }
+}
+// This block the total number of hours the user has slept in the week.
+const getActualSleepHours = () => {
+  const numMonday = getSleepHours('monday');
+  const numTuesday = getSleepHours('tuesday');
+  const numWednesday = getSleepHours('wednesday');
+  const numThursday = getSleepHours('thursday');
+  const numFriday = getSleepHours('friday');
+  const numSaturday = getSleepHours('saturday');
+  const numSunday = getSleepHours('sunday');
+  let sum = numMonday + numTuesday + numWednesday + numThursday + numFriday + numSaturday + numSunday; 
+    return sum;
+}
+// This block gets the ideal number of hours the user consider right.
+const getIdealSleepHours = () => {
+  let idealHours = 9;
+    return idealHours * 7;
+}
+// This block comapares the ideal sleep hours with the actual sleep hours of the user and prints how many hours them over/under slept.
+const calculateSleepDebt = () => {
+  let actualSleepHours = getActualSleepHours();
+  let idealSleepHours = getIdealSleepHours();
+  if(actualSleepHours === idealSleepHours){
+      return console.log('You got the perfect amount of sleep!');
+  } else if(actualSleepHours < idealSleepHours) {
+    let debt = idealSleepHours - actualSleepHours;
+      return console.log(`You have slept ${debt} hours less than you should!`);
+  } else {
+    let credit = actualSleepHours - idealSleepHours;
+      return console.log(`You have slept ${credit} hours more than you needed!`);
+  }
+}
+console.log(getIdealSleepHours());
+console.log(getActualSleepHours()); 
+calculateSleepDebt();
